@@ -98,7 +98,7 @@ createArchive
 
 createArchive(){
 # Archive and compress the specified files.
-tar  -czpf "$backup_drive/$backup_name.tar.gz" --exclude=".Windward" "${folders_to_back_up[@]}"
+tar  -czpf "$backup_drive/$backup_name.tar.gz" "${folders_to_back_up[@]}"
 # Encrypt the compressed backup archive.
 gpg -c --use-agent --cipher-algo aes256 "$backup_drive/$backup_name.tar.gz"
 # Reference the flag made for unencrypted backup review.
